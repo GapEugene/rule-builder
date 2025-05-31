@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import fields from './fields';
 import { useDispatch } from 'react-redux';
 import { removeFilter, updateFilter } from './../../store/slices/groupSlice';
+import useFilterDragAndDrop from './../../hooks/useFilterDragAndDrop';
 
 const Item = ({ id, field = '', operator = '', value = '', groupId, isDisabled }) => {
   const dispatch = useDispatch();
@@ -9,6 +10,8 @@ const Item = ({ id, field = '', operator = '', value = '', groupId, isDisabled }
   const [selectedField, setSelectedField] = useState(field);
   const [selectedOperator, setSelectedOperator] = useState(operator);
   const [inputValue, setInputValue] = useState(value);
+
+  const { handleDragStart } = useFilterDragAndDrop(id, groupId);
 
   useEffect(() => {
     if (!fields[selectedField]?.operators.some(operator => operator.value === selectedOperator)) {
@@ -35,7 +38,11 @@ const Item = ({ id, field = '', operator = '', value = '', groupId, isDisabled }
   };
 
   return (
-    <div className="d-flex mt-2">
+    <div
+      className="d-flex mt-2"
+      draggable={!isDisabled}
+      onDragStart={handleDragStart}
+    >
 
       <div className="w-25 me-2">
         <select

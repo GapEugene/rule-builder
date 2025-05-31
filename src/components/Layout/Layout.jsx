@@ -1,8 +1,8 @@
-import useDragAndDrop from '../../hooks/useDragAndDrop';
+import useGroupDragAndDrop from '../../hooks/useGroupDragAndDrop';
 import styles from './Layout.module.css';
 
 const Layout = ({ title, children }) => {
-  const { handleDragOver, handleDrop } = useDragAndDrop(null);
+  const { handleDragOver, handleDrop } = useGroupDragAndDrop(null);
 
   return (
     <div

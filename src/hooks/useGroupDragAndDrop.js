@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { moveGroup } from './../store/slices/groupSlice';
 
-const useDragAndDrop = (id = null) => {
+const useGroupDragAndDrop = (id = null) => {
   const dispatch = useDispatch();
 
   const handleDragStart = (event) => {
@@ -23,4 +23,4 @@ const useDragAndDrop = (id = null) => {
   return { handleDragStart, handleDragOver, handleDrop };
 };
 
-export default useDragAndDrop;
+export default useGroupDragAndDrop;

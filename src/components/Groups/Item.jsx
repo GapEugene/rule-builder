@@ -2,14 +2,14 @@ import clsx from 'clsx';
 import List from './List';
 import { Adder, Expander, Disabler, Excluder, Remover, Toggler } from './controls';
 import Filters from './../Filters';
-import useDragAndDrop from './../../hooks/useDragAndDrop';
+import useGroupDragAndDrop from './../../hooks/useGroupDragAndDrop';
 
 const Item = ({
   id, name, isExpanded, isDisabled, isBlocked,
   logic, children, filters, parentDisabled, openEditor,
 }) => {
 
-  const { handleDragStart, handleDragOver, handleDrop } = useDragAndDrop(id);
+  const { handleDragStart, handleDragOver, handleDrop } = useGroupDragAndDrop(id);
 
   const itemClassName = clsx(
     'm-2 p-2 border rounded',
@@ -22,7 +22,7 @@ const Item = ({
   return (
     <div
       className={itemClassName}
-      draggable={true}
+      draggable={!(isDisabled || parentDisabled)}
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDrop={handleDrop}

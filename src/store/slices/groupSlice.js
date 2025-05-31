@@ -99,7 +99,16 @@ const groupSlice = createSlice({
       Object.assign(filter, changes);
     },
     moveFilter: (state, action) => {
-      
+      const { id, fromGroupId, toGroupId } = action.payload;
+      if (fromGroupId === toGroupId) return;
+
+      const fromGroup = findGroupById(state, fromGroupId);
+      const toGroup = findGroupById(state, toGroupId);
+
+      const filterIndex = fromGroup.filters.findIndex(f => f.id === id);
+
+      const [filter] = fromGroup.filters.splice(filterIndex, 1);
+      toGroup.filters.push(filter);
     },
     removeFilter: (state, action) => {
       const { groupId, id } = action.payload;
