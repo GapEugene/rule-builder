@@ -11,7 +11,6 @@ const Groups = () => {
 
   return (
     <>
-    
       <List
         items={groups}
         openEditor={(id, name) => setEditData({ isOpen: true, id, name })}

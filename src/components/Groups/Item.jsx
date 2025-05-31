@@ -1,11 +1,12 @@
 import clsx from 'clsx';
 import List from './List';
 import { Adder, Expander, Disabler, Excluder, Remover, Toggler } from './controls';
+import Filters from './../Filters';
 import useDragAndDrop from './../../hooks/useDragAndDrop';
 
 const Item = ({
   id, name, isExpanded, isDisabled, isBlocked,
-  logic, parentDisabled, openEditor, children,
+  logic, children, filters, parentDisabled, openEditor,
 }) => {
 
   const { handleDragStart, handleDragOver, handleDrop } = useDragAndDrop(id);
@@ -46,6 +47,12 @@ const Item = ({
 
       {isExpanded && (
         <>
+          <Filters
+            groupId={id}
+            filters={filters}
+            isDisabled={parentDisabled || isDisabled}
+          />
+
           <div className="d-flex mt-2">
             <div className="me-auto">
               <Adder id={id} isDisabled={parentDisabled || isDisabled} />
