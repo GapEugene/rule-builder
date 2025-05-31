@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { updateGroup } from './../../../store/slices/groupSlice';
+import clsx from 'clsx';
 
 const Expander = ({ id, isExpanded }) => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const Expander = ({ id, isExpanded }) => {
 
   return (
     <button className="btn btn-sm btn-outline-secondary ms-3" onClick={() => handleExpander(id)}>
-      <i className={`fa-solid ${isExpanded ? 'fa-chevron-up' : 'fa-chevron-down'}`} />
+      <i className={clsx('fa-solid', isExpanded ? 'fa-chevron-up' : 'fa-chevron-down')} />
     </button>
   );
 };

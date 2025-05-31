@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { updateGroup } from './../../../store/slices/groupSlice';
+import clsx from 'clsx';
 
 const Disabler = ({ id, isDisabled, parentDisabled }) => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const Disabler = ({ id, isDisabled, parentDisabled }) => {
   
   return (
     <button
-      className={`btn me-2 ${isDisabled ? 'btn-secondary' : 'btn-outline-secondary'}`}
+      className={clsx('btn me-2', isDisabled ? 'btn-secondary' : 'btn-outline-secondary')}
       onClick={() => handleDisabler(id)}
       disabled={parentDisabled}
     >

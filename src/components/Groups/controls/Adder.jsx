@@ -14,7 +14,7 @@ const Adder = ({ id = null, isDisabled }) => {
       onClick={() => handleAddGroup(id)}
       disabled={isDisabled}
     >
-      Добавить
+      Добавить группу
     </button>
   );
 };

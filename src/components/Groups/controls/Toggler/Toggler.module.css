@@ -1,0 +1,62 @@
+.toggler {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 5rem;
+  height: 2rem;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #0d6efd;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: border-color 0.15s linear;
+}
+
+.toggler::before {
+  content: '';
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 1.375rem;
+  height: 1.375rem;
+  border-radius: 50%;
+  background-color: #0d6efd;
+  transition: background-color 0.15s linear,
+              left 0.15s linear;
+}
+
+.toggler:has(.checkbox:checked) {
+  border-color: #198754;
+}
+
+.toggler:has(.checkbox:checked)::before {
+  left: 3.25rem;
+  background-color: #198754;
+}
+
+.value-1 {
+  margin-left: auto;
+  color: #0d6efd;
+}
+
+.value-2 {
+  color: #198754;
+}
+
+.value-1,
+.toggler:has(.checkbox:checked) .value-2 {
+  display: block;
+}
+
+.value-2,
+.toggler:has(.checkbox:checked) .value-1 {
+  display: none;
+}
+
+.checkbox {
+  display: none;
+}
+
+.toggler:has(.checkbox:disabled) {
+  opacity: 0.65;
+  cursor: default;
+}

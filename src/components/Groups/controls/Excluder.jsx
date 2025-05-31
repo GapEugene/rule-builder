@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { updateGroup } from './../../../store/slices/groupSlice';
+import clsx from 'clsx';
 
 const Excluder = ({ id, isDisabled, isBlocked }) => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ const Excluder = ({ id, isDisabled, isBlocked }) => {
 
   return (
     <button
-      className={`btn me-2 ${isBlocked ? 'btn-warning' : 'btn-outline-warning'}`}
+      className={clsx('btn me-2', isBlocked ? 'btn-warning' : 'btn-outline-warning')}
       onClick={() => handleExcluder(id)}
       disabled={isDisabled}
     >

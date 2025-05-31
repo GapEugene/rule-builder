@@ -1,6 +1,5 @@
 import { createSlice, nanoid } from '@reduxjs/toolkit';
-import findGroupById from './../utils/findGroupById';
-import removeGroupById from './../utils/removeGroupById';
+import { findGroupById, isDescendant, removeGroupById } from './../utils';
 
 const initialState = [];
 
@@ -40,9 +39,32 @@ const groupSlice = createSlice({
       Object.assign(group, changes);
     },
     moveGroup: (state, action) => {
-      const { id, parentId } = action.payload;
+      const { draggedId, id: targetId } = action.payload;
+      const draggedGroup = findGroupById(state, draggedId);
 
-      console.log(id, parentId);
+      if (
+        !draggedGroup ||
+        draggedId === targetId || 
+        (targetId !== null && isDescendant(draggedGroup, targetId))
+      ) {
+        return state;
+      }
+
+      const nextState = removeGroupById(state, draggedId);
+
+      if (targetId === null) {
+        nextState.push(draggedGroup);
+      } else {
+        const targetGroup = findGroupById(nextState, targetId);
+
+        if (targetGroup) {
+          targetGroup.children.push(draggedGroup);
+        } else {
+          nextState.push(draggedGroup);
+        }
+      }
+
+      return nextState;
     },
     removeGroup: (state, action) => {
       const id = action.payload;
