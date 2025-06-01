@@ -91,6 +91,7 @@ const Item = ({ id, field = '', operator = '', value = '', groupId, isDisabled }
         <button
           className="btn btn-outline-danger"
           onClick={handleRemove}
+          disabled={isDisabled}
         >
           Удалить
         </button>
