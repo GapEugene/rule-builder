@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "./static/css/main.1486273c.css",
-    "main.js": "./static/js/main.75f79bd6.js",
-    "static/media/fa-solid-900.ttf": "./static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
-    "static/media/fa-brands-400.ttf": "./static/media/fa-brands-400.1815e00441357e01619e.ttf",
-    "static/media/fa-solid-900.woff2": "./static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
-    "static/media/fa-brands-400.woff2": "./static/media/fa-brands-400.c210719e60948b211a12.woff2",
-    "static/media/fa-regular-400.ttf": "./static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
-    "static/media/fa-regular-400.woff2": "./static/media/fa-regular-400.89999bdf5d835c012025.woff2",
-    "static/media/fa-v4compatibility.ttf": "./static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
-    "static/media/fa-v4compatibility.woff2": "./static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
-    "index.html": "./index.html",
-    "main.1486273c.css.map": "./static/css/main.1486273c.css.map",
-    "main.75f79bd6.js.map": "./static/js/main.75f79bd6.js.map"
+    "main.css": "/rule-builder/static/css/main.dc9bb0c3.css",
+    "main.js": "/rule-builder/static/js/main.3059fc47.js",
+    "static/media/fa-solid-900.ttf": "/rule-builder/static/media/fa-solid-900.2582b0e4bcf85eceead0.ttf",
+    "static/media/fa-brands-400.ttf": "/rule-builder/static/media/fa-brands-400.1815e00441357e01619e.ttf",
+    "static/media/fa-solid-900.woff2": "/rule-builder/static/media/fa-solid-900.2463b90d9a316e4e5294.woff2",
+    "static/media/fa-brands-400.woff2": "/rule-builder/static/media/fa-brands-400.c210719e60948b211a12.woff2",
+    "static/media/fa-regular-400.ttf": "/rule-builder/static/media/fa-regular-400.914997e1bdfc990d0897.ttf",
+    "static/media/fa-regular-400.woff2": "/rule-builder/static/media/fa-regular-400.89999bdf5d835c012025.woff2",
+    "static/media/fa-v4compatibility.ttf": "/rule-builder/static/media/fa-v4compatibility.da94ef451f4969af06e6.ttf",
+    "static/media/fa-v4compatibility.woff2": "/rule-builder/static/media/fa-v4compatibility.ea8f94e1d22e0d35ccd4.woff2",
+    "index.html": "/rule-builder/index.html",
+    "main.dc9bb0c3.css.map": "/rule-builder/static/css/main.dc9bb0c3.css.map",
+    "main.3059fc47.js.map": "/rule-builder/static/js/main.3059fc47.js.map"
   },
   "entrypoints": [
-    "static/css/main.1486273c.css",
-    "static/js/main.75f79bd6.js"
+    "static/css/main.dc9bb0c3.css",
+    "static/js/main.3059fc47.js"
   ]
 }
